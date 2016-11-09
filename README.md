@@ -1,7 +1,4 @@
-lalala
-Trying again
-Just checking name of a committer
-Making some changes
 Hello
 # hacker-rank
-Codes from hackerrank
+My coding at hacker-rank experience, so no unit cases is created inside the codes
+
