@@ -1,3 +1,4 @@
+Just checking name of a committer
 Making some changes
 Hello
 # hacker-rank
