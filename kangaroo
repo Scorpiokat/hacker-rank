@@ -1,0 +1,23 @@
+import Control.Applicative
+import System.IO
+import Data.List
+
+main :: IO ()
+main = do
+    x1_temp <- getLine
+    let x1_t = words x1_temp
+        x1 = read $ x1_t!!0 :: Int -- The first kangaroo starts at this location
+        v1 = read $ x1_t!!1 :: Int -- The first kangaroo moves at a rate of this number of meters per jump
+        x2 = read $ x1_t!!2 :: Int -- The second kangaroo starts at this location
+        v2 = read $ x1_t!!3 :: Int -- The second kangaroo moves at a rate of this number of meters per jump
+        firstlist = (map (+ x1) $ map (*v1) [1..10000])
+        secondlist = (map (+ x2) $ map (*v2) [1..10000])
+        answer = check firstlist secondlist
+    if answer >= 1 then putStrLn ("YES") else putStrLn ("NO")
+
+check :: [Int] -> [Int] -> Int
+check _ [] = 0
+check [] _ = 0
+check (x:xs) (y:ys)
+    |x == y = 1
+    |otherwise = check xs ys
